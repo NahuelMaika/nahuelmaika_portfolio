@@ -3,14 +3,14 @@ import { Canvas } from "@react-three/fiber";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { Room } from "./Optimized-room";
+import HeroLights from "./HeroLights";
 
 const HeroExperience = () => {
   const isTablet = useMediaQuery({ query: "(max-width: 1025px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
-      <ambientLight intensity={0.2} color="#1a1a40" />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
+      <HeroLights />
       <OrbitControls
         enablePan={false}
         enableZoom={!isTablet}
