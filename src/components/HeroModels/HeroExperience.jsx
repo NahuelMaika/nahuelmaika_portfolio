@@ -1,12 +1,12 @@
+import React from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { Room } from "./Optimized-room";
 import HeroLights from "./HeroLights";
 
 const HeroExperience = () => {
-  const isTablet = useMediaQuery({ query: "(max-width: 1025px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
