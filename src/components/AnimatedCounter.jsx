@@ -1,5 +1,12 @@
 import React from "react";
 import { counterItems } from "../constants";
+import { useCountUp } from "react-countup";
+
+const Counter = ({ item }) => {
+  const ref = React.useRef(null);
+  useCountUp({ ref, end: item.value, suffix: item.suffix });
+  return <span ref={ref} />;
+};
 
 const AnimatedCounter = () => {
   return (
@@ -10,12 +17,8 @@ const AnimatedCounter = () => {
             className="bg-zinc-900 rounded-lg p-10 flex flex-col justify-center"
             key={index}
           >
-            <div
-              key={index}
-              className="counter-number text-white text-5xl font-bold mb-2"
-            >
-              {item.value}
-              {item.suffix}
+            <div className="counter-number text-white text-5xl font-bold mb-2">
+              <Counter item={item} />
             </div>
             <div className="text-white-50 text-lg">{item.label}</div>
           </div>
